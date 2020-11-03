@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h1 th:text="|您传递的参数：${message}好吧|"></h1>
+        <h1 th:text="'您传递的参数：'+${message}+'好吧'"></h1>
+    </div>
+    <div>
+        编号：<span th:text="${user.id}"></span>
+        姓名：<span th:text="${user.name}"></span>
+        年龄：<span th:text="${user.age}"></span>
+    </div>
+    <div>
+        编号：<span th:text="${src.user.id}"></span>
+        姓名：<span th:text="${src.user.name}"></span>
+        年龄：<span th:text="${src.user.age}"></span>
+    </div>
+    <div th:if="${flag=='no'}">
+        <div>
+            <img th:src="${src.src1}" width="200" height="80">
+        </div>
+    </div>
+    <div th:unless="${flag=='no'}">打印</div>
+    <div th:switch="${flag}">
+        <h2 th:case="yes">呵呵</h2>
+        <h2 th:case="no">1呵呵</h2>
+    </div>
+</body>
+</html>
